@@ -1,0 +1,86 @@
+$primary-color:white;
+$secondary-color: #090909;
+$terciary-color:  red;
+$font-color:  #5CADBF;
+
+$box-shadow:  #5CADBF;
+$limit: 10px;
+$unit: 8px;
+
+@function size($value){
+    @return $value * $unit;  
+}
+@mixin reset-pm{
+    padding: 0;
+    margin: 0;
+    
+} 
+@mixin btn($background-color, $color, $bold){
+    background-color: $background-color;
+    color: $color;
+    border-radius: 50px;
+    padding: 20px 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+
+  
+} 
+
+
+
+*{
+  @include reset-pm();
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: $terciary-color;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+a {
+    color: $secondary-color;
+    text-decoration: none;
+
+
+} 
+p {
+    font-size:size(5);
+
+}
+h2 {
+    font-weight: bolder;
+    font-size:size(6);
+}
+
+h3{
+    font-weight: lighter;
+    font-size:size(3);
+
+}
+ul{
+    @include reset-pm();
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    li{
+        a{
+            @include btn($background-color: $secondary-color,
+            $color: $terciary-color, 
+            $bold: 'true');
+            
+
+        }
+    }
+}
+header{
+    nav{display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+}
